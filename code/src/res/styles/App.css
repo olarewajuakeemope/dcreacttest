@@ -3,21 +3,28 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: white;
+  background-size:cover;
+  height: 1080px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
   font-size: 1.5em;
+  margin-top: 5em;
+  margin-bottom: 3em;
+  color: rgb(117, 170, 81);
 }
 
-.App-intro {
-  font-size: large;
+.form-label {
+  color: #555555;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.input-group {
+	margin: 20px 0px;
+}
+
+.btn {
+  cursor: pointer;
 }
