@@ -25,14 +25,6 @@ class WeatherStore extends EventEmitter {
    */
   handleAction(action) {
     if (action.type === 'WEATHER_FETCHED') {
-      // const Weather = action.data.Weather.map(article => ({
-      //   title: article.title,
-      //   description: article.description,
-      //   url: article.url,
-      //   imageUrl: article.urlToImage,
-      //   author: article.author,
-      //   publishedAt: article.publishedAt,
-      // }));
       this.Weather = action.data;
       this.emit('weatherFetched');
     }

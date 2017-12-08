@@ -14,12 +14,14 @@ class Weather extends Component {
   componentWillMount() {
     const details = weatherStore.getWeather();
     const { weather, main, wind, dt } = details;
-    this.setState({
-      date: Date(dt).toString().substring(0, 24),
-      temp: main.temp,
-      speed: wind.speed,
-      description: weather[0].description,
-    });
+    if (weather && main && wind && dt) {
+      this.setState({
+        date: (new Date(dt * 1000)).toString().substring(0, 24),
+        temp: main.temp,
+        speed: wind.speed,
+        description: weather[0].description,
+      });
+    }
   }
 
   render() {

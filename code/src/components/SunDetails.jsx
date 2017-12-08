@@ -13,14 +13,16 @@ class SunDetails extends Component {
   componentWillMount() {
     const details = weatherStore.getWeather();
     const { sys, dt } = details;
-    this.setState({
-      date: this.formatDate(dt),
-      riseDate: this.formatDate(sys.sunrise),
-      setDate: this.formatDate(sys.sunset),
-    });
+    if (sys && dt) {
+      this.setState({
+        date: this.formatDate(dt),
+        riseDate: this.formatDate(sys.sunrise),
+        setDate: this.formatDate(sys.sunset),
+      });
+    }
   }
 
-  formatDate = date => (Date(date).toString().substring(0, 25))
+  formatDate = date => ((new Date(date * 1000)).toString().substring(0, 25))
 
   render() {
     const {
